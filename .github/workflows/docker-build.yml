@@ -10,12 +10,13 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
-      - name: Declare some variables
+      - uses: actions/checkout@v1
+      - name: Declare VAR
         shell: bash
         run: |
           echo "sha_short=$(git rev-parse --short "$GITHUB_SHA")" >> "$GITHUB_ENV"
           echo "branch=$(echo ${GITHUB_REF#refs/heads/})" >> "$GITHUB_ENV"
-      - name: Another step
+      - name: Show VAR
         run: |
           echo "Branch: ${{ env.branch }}"
           echo "Sha: $GITHUB_SHA"
