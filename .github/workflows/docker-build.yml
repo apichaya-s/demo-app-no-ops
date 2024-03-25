@@ -15,6 +15,11 @@ jobs:
         run: |
           echo "sha_short=$(git rev-parse --short "$GITHUB_SHA")" >> "$GITHUB_ENV"
           echo "branch=$(echo ${GITHUB_REF#refs/heads/})" >> "$GITHUB_ENV"
+      - name: Another step
+        run: |
+          echo "Branch: ${{ env.branch }}"
+          echo "Sha: $GITHUB_SHA"
+          echo "short sha: ${{ env.sha_short }}"
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
       - name: Set up Docker Buildx
