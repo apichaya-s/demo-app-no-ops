@@ -1,4 +1,4 @@
-name: Dastardly
+name: zaproxy
 
 on:
   workflow_dispatch:
