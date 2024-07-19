@@ -23,3 +23,4 @@ jobs:
         with:
           report_paths: '**/dastardly-report.xml'       # You need to update this path if you pass in a different output filename to the Dastardly action
           require_tests: true
+          annotate_only: true
