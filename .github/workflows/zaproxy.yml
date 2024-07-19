@@ -1,0 +1,20 @@
+name: Dastardly
+
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        type: string
+        description: url to test
+        required: true
+        default: 'https://ginandjuice.shop'
+
+jobs:
+  dast:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ZAP Scan
+        uses: zaproxy/action-full-scan@v0.10.0
+        with:
+          target: ${{ inputs.url }} 
+          allow_issue_writing: false
