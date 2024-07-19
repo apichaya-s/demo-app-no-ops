@@ -3,6 +3,9 @@ name: Dastardly
 on:
   workflow_dispatch:
 
+permissions:
+  checks: write
+  
 jobs:
   dast:
     runs-on: ubuntu-latest
